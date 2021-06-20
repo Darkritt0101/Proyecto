@@ -2,15 +2,15 @@ package com.ucreativa.storebook.entities;
 
 public abstract class Document {
 
-    private String type;
+    private String tipo;
     private String editorial;
     private String edicion;
     private int paginas;
     private String anio;
     private String titulo;
 
-    public Document(String type, String editorial, String edicion, int paginas, String anio, String titulo) {
-        this.type = type;
+    public Document(String tipo, String editorial, String edicion, int paginas, String anio, String titulo) {
+        this.tipo = tipo;
         this.editorial = editorial;
         this.edicion = edicion;
         this.paginas = paginas;
@@ -18,8 +18,8 @@ public abstract class Document {
         this.titulo = titulo;
     }
 
-    public String getType() {
-        return type;
+    public String getTipo() {
+        return tipo;
     }
 
     public String getEditorial() {

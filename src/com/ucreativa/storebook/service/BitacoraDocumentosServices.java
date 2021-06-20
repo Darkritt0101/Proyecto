@@ -45,23 +45,39 @@ public class BitacoraDocumentosServices {
         return "No_Encontrado";
     }
 
+    private static boolean  esNumero(String texto){
+        //devuelve un error si la conversion es incorrecta
+        //entonces se captura el error para conocer si es numerico
+        try {
+            Integer.parseInt(texto);
+            return true;
+        } catch (NumberFormatException e){
+            return false;
+        }
+    }
+
     public void guardarDatos (String type, String editorial, String edicion, String paginas, String anio, String titulo,
                               String author,String ISBN, String area,String tematica, String numeroRevista, String responsables, String ISSN,
                               String cantidades, String ubicacion, boolean book, boolean magazine) throws Exception{
-
         //evalua si hay cambpos en blancos para no proceder
         //bota el sistema.
-
         if (book) {
             if (type.equals("") | editorial.equals("") | edicion.equals("") | paginas.equals("") | anio.equals("") | titulo.equals("") | author.equals("") | ISBN.equals("") | area.equals("")) {
-                throw new Exception();
+                throw new Exception("Hay Campos vacios");
             }
         }
 
         if (magazine) {
             if (type.equals("") | editorial.equals("") | edicion.equals("") | paginas.equals("") | anio.equals("") | titulo.equals("") | tematica.equals("") | numeroRevista.equals("") | ISSN.equals("")) {
-                throw new Exception();
+                throw new Exception("Hay Campos vacios");
             }
+        }
+
+
+        if (!esNumero(paginas) | !esNumero(cantidades)){
+            //evalua si los campos son numericos
+            //en cualquiera de los casos que sea falso, se sale del proceso
+            throw new Exception("Los campos:Cantidad y Paginas, son tipo numerico entero.");
         }
 
         Book documentBook;
@@ -87,10 +103,6 @@ public class BitacoraDocumentosServices {
                 this.repository.guardarDatosMagazine(documentMagazine, cantidades, ubicacion, new Date());
             }
         }
-
-    }
-
-    private void validarCampos(){
 
     }
 

@@ -1,6 +1,5 @@
 package com.ucreativa.storebook.ui;
 
-
 import com.ucreativa.storebook.repositories.FileRepository;
 import com.ucreativa.storebook.service.BitacoraDocumentosServices;
 
@@ -8,6 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
+
+import static com.ucreativa.storebook.repositories.Repository.*;
 
 public class FrontEnd extends JFrame {
 
@@ -40,7 +43,7 @@ public class FrontEnd extends JFrame {
     private JLabel     lblArea;
     private JLabel     lblNumeroRevista;
     private JLabel     lblTematica;
-    private JButton    btnReporte;
+    private JButton    btnReporteConsolidado;
     private JTextField txtISSN;
     private JLabel     lblISSN;
     private JLabel lvlTituloInventario;
@@ -48,6 +51,8 @@ public class FrontEnd extends JFrame {
     private JTextField txtCantidad;
     private JLabel     lblUbicacion;
     private JTextField txtUbicacion;
+    private JButton btnReporteBook;
+    private JButton btnReporteMagazine;
 
     public FrontEnd(String titulo) {
         super(titulo);
@@ -60,6 +65,57 @@ public class FrontEnd extends JFrame {
     }
 
     private void components() {
+
+        //evento agregado al btn - Abrir Reporte Magazine
+        btnReporteMagazine.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                File file = new File (FILE_PATH_MAGAZINE);
+                Desktop desktops = Desktop.getDesktop();
+                if (file.exists()) {
+                    try {
+                        desktops.open(file);
+                    } catch (IOException ioException) {
+                        JOptionPane.showMessageDialog(null, ioException.getMessage());
+                    }
+                }
+            }
+        });
+
+
+        //evento agregado al btn - Abrir Reporte Book
+        btnReporteBook.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                File file = new File (FILE_PATH_BOOK);
+                Desktop desktops = Desktop.getDesktop();
+                if (file.exists()) {
+                    try {
+                        desktops.open(file);
+                    } catch (IOException ioException) {
+                        JOptionPane.showMessageDialog(null, ioException.getMessage());
+                    }
+                }
+            }
+        });
+
+
+        //evento agregado al btn - Abrir Reporte Consolidado
+        btnReporteConsolidado.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                File file = new File (FILE_PATH_TODO);
+                Desktop desktops = Desktop.getDesktop();
+                if (file.exists()){
+                    try {
+                        desktops.open(file);
+                    } catch (IOException ioException) {
+                        JOptionPane.showMessageDialog(null,ioException.getMessage());
+                    }
+                }
+            }
+        });
+
 
         //evento agregado al check de book
         chkBook.addActionListener(new ActionListener() {
@@ -137,8 +193,6 @@ public class FrontEnd extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-
-
                 BitacoraDocumentosServices service = new BitacoraDocumentosServices(new FileRepository());
                 try {
                     service.guardarDatos(txtTipo.getText(), txtEditorial.getText(), txtEdicion.getText(), txtPaginas.getText(),
@@ -146,16 +200,13 @@ public class FrontEnd extends JFrame {
                             txtTematica.getText(), txtNumeroRevista.getText(), txtResponsable.getText(), txtISSN.getText(),
                             txtCantidad.getText(), txtUbicacion.getText(), chkBook.isSelected(), chkMagazine.isSelected());
                 } catch (Exception exception) {
-                    JOptionPane.showMessageDialog(null,"Hay Campos Varios, debe de llenarlos");
+                    JOptionPane.showMessageDialog(null,exception.getMessage());
                     //exception.printStackTrace();
                 }
-
                 //limpieza de campos
                 limpiarTodoTxtField();
                 chkBook.setSelected(false);
                 chkMagazine.setSelected(false);
-
-
 
             }
         });
@@ -188,6 +239,5 @@ public class FrontEnd extends JFrame {
         this.setSize(500, 400);
         this.setLocationRelativeTo(null); //centrar el formulario al centro de la pantalla
     }
-
 
 }

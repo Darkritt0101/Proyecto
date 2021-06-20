@@ -13,19 +13,15 @@ import java.util.stream.Collectors;
 
 public class FileRepository implements Repository{
 
-    private final String FILE_PATH_TODO = "db_TodosLosDocumentos.txt";
-    private final String FILE_PATH_BOOK = "db_Book.txt";
-    private final String FILE_PATH_MAGAZINE = "db_Magazine.txt";
-
     @Override
     public void guardarDatosBook(Book documentBook, String cantidades, String Ubicacion, Date fecha) {
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
         Document document;
         document = documentBook;
-        String textoConsolidado = "**********\nISBN:" + documentBook.getISBN() + "\nTipo:" + document.getType() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
+        String textoConsolidado = "**********\nISBN:" + documentBook.getISBN() + "\nTipo:" + document.getTipo() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
                         document.getEdicion() + "\nPaginas:" + document.getPaginas() + "\nEditorial:" + document.getEditorial() + "\nAutor:" + documentBook.getAuthor() +
                         "\nArea:" + documentBook.getArea() + "\nCantidad:" + cantidades + "\nUbicacion:" + Ubicacion + "\nF.Registro:" + formatDate.format(fecha)+ "\n";
-        String textoBook = "**********\nISBN:" + documentBook.getISBN() + "\nTipo:" + document.getType() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
+        String textoBook = "**********\nISBN:" + documentBook.getISBN() + "\nTipo:" + document.getTipo() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
                 document.getEdicion() + "\nPaginas:" + document.getPaginas() + "\nEditorial:" + document.getEditorial() + "\nAutor:" + documentBook.getAuthor() +
                 "\nArea:" + documentBook.getArea() + "\nCantidad:" + cantidades + "\nUbicacion:" + Ubicacion + "\nF.Registro:" + formatDate.format(fecha) + "\n";
         try {
@@ -48,11 +44,11 @@ public class FileRepository implements Repository{
         SimpleDateFormat formatDate = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
         Document document;
         document = documentMagazine;
-        String textoConsolidado = "**********\nISSN:" + documentMagazine.getISSN() + "\nTipo:" + document.getType() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
+        String textoConsolidado = "**********\nISSN:" + documentMagazine.getISSN() + "\nTipo:" + document.getTipo() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
                 document.getEdicion() + "\nPaginas:" + document.getPaginas() + "\nEditorial:" + document.getEditorial() + "\nTematica::" + documentMagazine.getTematica() +
                 "\n#Revista:" + documentMagazine.getNumeroRevista() + "\nResponsable:" + documentMagazine.getResponsables() + "\nCantidad:" + cantidades + "\nUbicacion:" +
                 Ubicacion + "\nF.Registro:" + formatDate.format(fecha)+ "\n";
-        String textoMagazine = "**********\nISSN:" + documentMagazine.getISSN() + "\nTipo:" + document.getType() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
+        String textoMagazine = "**********\nISSN:" + documentMagazine.getISSN() + "\nTipo:" + document.getTipo() + "\nTitulo:" + document.getTitulo() + "\nAño:" + document.getAnio() + "\nEdicion:" +
                 document.getEdicion() + "\nPaginas:" + document.getPaginas() + "\nEditorial:" + document.getEditorial() + "\nTematica::" + documentMagazine.getTematica() +
                 "\n#Revista:" + documentMagazine.getNumeroRevista() + "\nResponsable:" + documentMagazine.getResponsables() + "\nCantidad:" + cantidades + "\nUbicacion:" +
                 Ubicacion + "\nF.Registro:" + formatDate.format(fecha)+ "\n";

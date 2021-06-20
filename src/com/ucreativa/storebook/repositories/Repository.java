@@ -13,4 +13,8 @@ public interface Repository {
     List<String> getDatosTodo();
     List<String> getDatosBook();
     List<String> getDatosMagazine();
+
+    String FILE_PATH_TODO = "db_TodosLosDocumentos.txt";
+    String FILE_PATH_BOOK = "db_Book.txt";
+    String FILE_PATH_MAGAZINE = "db_Magazine.txt";
 }

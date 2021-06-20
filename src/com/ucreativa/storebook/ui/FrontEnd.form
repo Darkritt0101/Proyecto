@@ -265,7 +265,7 @@
           <toolTipText value="Guardar Registro en un .txt"/>
         </properties>
       </component>
-      <component id="4959c" class="javax.swing.JButton" binding="btnReporte">
+      <component id="4959c" class="javax.swing.JButton" binding="btnReporteConsolidado">
         <constraints>
           <grid row="11" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -273,7 +273,7 @@
           <background color="-11330561"/>
           <foreground color="-1245187"/>
           <hideActionText value="false"/>
-          <text value="Generar Reporte Consolidado"/>
+          <text value="Abrir Reporte Consolidado"/>
           <toolTipText value="Generar un reporte de los datos guardados"/>
         </properties>
       </component>
@@ -340,7 +340,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="cdb1" class="javax.swing.JButton">
+      <component id="cdb1" class="javax.swing.JButton" binding="btnReporteBook">
         <constraints>
           <grid row="12" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
@@ -352,7 +352,7 @@
           <toolTipText value="Generar reporte de Book"/>
         </properties>
       </component>
-      <component id="b6936" class="javax.swing.JButton">
+      <component id="b6936" class="javax.swing.JButton" binding="btnReporteMagazine">
         <constraints>
           <grid row="12" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
