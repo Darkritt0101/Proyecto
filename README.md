@@ -15,22 +15,23 @@ Ademas, podra ver a continuacion las capturas de pantalla del sistema:
 
 para la imgen anterior:
 
-Campos
-***Paginas y Cantidad; solo aceptan numeros...., para los troso campos son de tipo texto.
-***ISBN y ISSN; en caso de que usted quiera guardar datos duplicados de estos campos, el sistema no lo dejara debido a que se consieran que estos campos son unicos.
+_Campos_
 
-Botonoes
-***Limpiar todo (en amarillo); limpia todos los campos del sistema.
-***Guardar Registro (Guarda la informacion que usted ha ingresado al sistema, es importante mencionar:
-    ***Si usted elige la opcion Book; los campos ISSN, Responsable, Tematica, Revista#, seran bloqueadas para su edicion.
-    ***Si usted elige la opcion Magazine; los campos ISBN, Area, Autor seran bloqueadas para su edicion.
-***Abrir Reporte Consolidado (color azul): muestra en una ventana emergente los datos registrados tanto para Book y Magazine en conjunto.
-***Abrir Reporte Book (color azul): muestra en una ventana emergente los datos registrados unicamente para Book.
-***Abrir Reporte Magazine (color azul): muestra en una ventana emergente los datos registrados unicamente para Magazine.
+1. Paginas y Cantidad; solo aceptan numeros...., para los troso campos son de tipo texto.
+2. ISBN y ISSN; en caso de que usted quiera guardar datos duplicados de estos campos, el sistema no lo dejara debido a que se consieran que estos campos son unicos.
+
+_Botones_
+
+1. Limpiar todo (en amarillo); limpia todos los campos del sistema.
+2. Guardar Registro (Guarda la informacion que usted ha ingresado al sistema, es importante mencionar:
+    2.1 Si usted elige la opcion Book; los campos ISSN, Responsable, Tematica, Revista#, seran bloqueadas para su edicion.
+    2.2 Si usted elige la opcion Magazine; los campos ISBN, Area, Autor seran bloqueadas para su edicion.
+3. Abrir Reporte Consolidado (color azul): muestra en una ventana emergente los datos registrados tanto para Book y Magazine en conjunto.
+4. Abrir Reporte Book (color azul): muestra en una ventana emergente los datos registrados unicamente para Book.
+5. Abrir Reporte Magazine (color azul): muestra en una ventana emergente los datos registrados unicamente para Magazine.
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
 1. El usuario final debera de tener instalado en su maquina el jre 14.0.1 o mayor.
 2. Windows 10 o mayor.
 3. Espacio en disco mayor a 3 MB.
