@@ -46,6 +46,7 @@ public class FileRepository implements Repository {
             writer2.append(textoBook);
             writer1.close();
             writer2.close();
+            JOptionPane.showMessageDialog(null, "El proceso ha terminado. Revise los reaulstados");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
@@ -81,6 +82,7 @@ public class FileRepository implements Repository {
             writer1.close();
             writer2.append(textoMagazine);
             writer2.close();
+            JOptionPane.showMessageDialog(null, "El proceso ha terminado. Revise los reaulstados");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(null, e.getMessage());
         }
