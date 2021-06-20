@@ -6,7 +6,7 @@ registrar libros y revistas, por tanto solo tiene la opcion de agregar al resgit
 ## Descripcion General del Sistema 🚀
 
 A continuacion usted podra encontrar las clases que coexisten en el sistema:
-![Diagrama de Clases](Book Store.jpg)
+![Diagrama de Clases](img/Book Store.jpg)
 
 
 
