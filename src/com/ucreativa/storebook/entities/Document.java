@@ -17,4 +17,29 @@ public abstract class Document {
         this.anio = anio;
         this.titulo = titulo;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public String getEdicion() {
+        return edicion;
+    }
+
+    public int getPaginas() {
+        return paginas;
+    }
+
+    public String getAnio() {
+        return anio;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
 }

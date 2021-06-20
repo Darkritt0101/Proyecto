@@ -1,6 +1,9 @@
 package com.ucreativa.storebook.ui;
 
 
+import com.ucreativa.storebook.repositories.FileRepository;
+import com.ucreativa.storebook.service.BitacoraDocumentosServices;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -40,6 +43,11 @@ public class FrontEnd extends JFrame {
     private JButton    btnReporte;
     private JTextField txtISSN;
     private JLabel     lblISSN;
+    private JLabel lvlTituloInventario;
+    private JLabel     lblCantidad;
+    private JTextField txtCantidad;
+    private JLabel     lblUbicacion;
+    private JTextField txtUbicacion;
 
     public FrontEnd(String titulo) {
         super(titulo);
@@ -59,6 +67,14 @@ public class FrontEnd extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 limpiarTodoTxtField();
                 chkMagazine.setSelected(false);
+
+                //txtfield documents
+                txtTitulo.setEnabled(true);
+                txtEditorial.setEnabled(true);
+                txtEdicion.setEnabled(true);
+                txtAnio.setEnabled(true);
+                txtPaginas.setEnabled(true);
+                txtTipo.setEnabled(true);
 
                 //enable - txtfield Book
                 txtAutor.setEnabled(true);
@@ -88,6 +104,14 @@ public class FrontEnd extends JFrame {
                 limpiarTodoTxtField();
                 chkBook.setSelected(false);
 
+                //txtfield documents
+                txtTitulo.setEnabled(true);
+                txtEditorial.setEnabled(true);
+                txtEdicion.setEnabled(true);
+                txtAnio.setEnabled(true);
+                txtPaginas.setEnabled(true);
+                txtTipo.setEnabled(true);
+
                 //enable - txtfield Magazine
                 txtNumeroRevista.setEnabled(true);
                 txtNumeroRevista.setBackground(new Color(255, 255, 255));
@@ -108,6 +132,33 @@ public class FrontEnd extends JFrame {
             }
         });
 
+        //evento agregado al boton guardarDatos
+        btnGuardar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+
+
+                BitacoraDocumentosServices service = new BitacoraDocumentosServices(new FileRepository());
+                try {
+                    service.guardarDatos(txtTipo.getText(), txtEditorial.getText(), txtEdicion.getText(), txtPaginas.getText(),
+                            txtAnio.getText(), txtTitulo.getText(), txtAutor.getText(), txtISBN.getText(), txtArea.getText(),
+                            txtTematica.getText(), txtNumeroRevista.getText(), txtResponsable.getText(), txtISSN.getText(),
+                            txtCantidad.getText(), txtUbicacion.getText(), chkBook.isSelected(), chkMagazine.isSelected());
+                } catch (Exception exception) {
+                    JOptionPane.showMessageDialog(null,"Hay Campos Varios, debe de llenarlos");
+                    //exception.printStackTrace();
+                }
+
+                //limpieza de campos
+                limpiarTodoTxtField();
+                chkBook.setSelected(false);
+                chkMagazine.setSelected(false);
+
+
+
+            }
+        });
     }
 
     private void limpiarTodoTxtField() {
@@ -134,7 +185,7 @@ public class FrontEnd extends JFrame {
     private void buildScreen() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
-        this.setSize(500, 299);
+        this.setSize(500, 400);
         this.setLocationRelativeTo(null); //centrar el formulario al centro de la pantalla
     }
 

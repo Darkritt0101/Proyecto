@@ -15,4 +15,21 @@ public class Magazine extends Document{
         this.responsables = responsables;
         this.ISSN= ISSN;
     }
+
+    public String getTematica() {
+        return tematica;
+    }
+
+    public String getNumeroRevista() {
+        return numeroRevista;
+    }
+
+    public String getResponsables() {
+        return responsables;
+    }
+
+    public String getISSN() {
+        return ISSN;
+    }
+
 }
