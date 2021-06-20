@@ -19,7 +19,7 @@ ademas, podra ver a continuacion las capturas de pantalla del sistema:
 _Que cosas necesitas para instalar el software y como instalarlas_
 1. El usuario final debera de tener instalado en su maquina el jre 14.0.1 o mayor.
 2. Windows 10 o mayor.
-3. Espacio en disco mayor a 3 mb.
+3. Espacio en disco mayor a 3 MB.
 
 ### Instalación 🔧
 
