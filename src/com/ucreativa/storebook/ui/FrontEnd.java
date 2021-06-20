@@ -53,6 +53,7 @@ public class FrontEnd extends JFrame {
     private JTextField txtUbicacion;
     private JButton btnReporteBook;
     private JButton btnReporteMagazine;
+    private JButton btnLimpiarTodo;
 
     public FrontEnd(String titulo) {
         super(titulo);
@@ -65,6 +66,14 @@ public class FrontEnd extends JFrame {
     }
 
     private void components() {
+
+        btnLimpiarTodo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                limpiarTodoTxtField();
+            }
+        });
+
 
         //evento agregado al btn - Abrir Reporte Magazine
         btnReporteMagazine.addActionListener(new ActionListener() {
@@ -203,10 +212,6 @@ public class FrontEnd extends JFrame {
                     JOptionPane.showMessageDialog(null,exception.getMessage());
                     //exception.printStackTrace();
                 }
-                //limpieza de campos
-                limpiarTodoTxtField();
-                chkBook.setSelected(false);
-                chkMagazine.setSelected(false);
 
             }
         });
@@ -231,12 +236,19 @@ public class FrontEnd extends JFrame {
         txtResponsable.setText("");
         txtTematica.setText("");
         txtISSN.setText("");
+
+        //otros Campos
+        chkBook.setSelected(false);
+        chkMagazine.setSelected(false);
+        txtCantidad.setText("");
+        txtUbicacion.setText("");
+
     }
 
     private void buildScreen() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setContentPane(mainPanel);
-        this.setSize(500, 400);
+        this.setSize(540, 400);
         this.setLocationRelativeTo(null); //centrar el formulario al centro de la pantalla
     }
 

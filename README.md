@@ -11,7 +11,19 @@ A continuacion usted podra encontrar las clases que coexisten en el sistema:
 
 Ademas, podra ver a continuacion las capturas de pantalla del sistema:
 
+<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Sistema.JPG" alt="Diagrama de clases"/>
 
+para la imgen anterior:
+
+Campos
+***Paginas y Cantidad; solo aceptan numeros...., para los troso campos son de tipo texto.
+***ISBN y ISSN; en caso de que usted quiera guardar datos duplicados de estos campos, el sistema no lo dejara debido a que se consieran que estos campos son unicos.
+
+Botonoes
+***Limpiar todo (en amarillo); limpia todos los campos del sistema.
+***Guardar Registro (Guarda la informacion que usted ha ingresado al sistema, es importante mencionar:
+    ***Si usted elige la opcion Book; los campos ISSN, Responsable, Tematica, Revista#, seran bloqueadas para su edicion.
+    ***Si usted elige la opcion Magazine; los campos ISBN, Area, Autor seran bloqueadas para su edicion.
 
 
 ### Pre-requisitos 📋
