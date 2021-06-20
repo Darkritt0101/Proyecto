@@ -30,6 +30,10 @@ _Botones_
 4. Abrir Reporte Book (color azul): muestra en una ventana emergente los datos registrados unicamente para Book.
 5. Abrir Reporte Magazine (color azul): muestra en una ventana emergente los datos registrados unicamente para Magazine.
 
+Ejemplo: A continuacion se presenta un ejemplo de llenado de la informacion, en este caso para Book, y el resultado del del .txt que se genera.
+
+<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Ejemplo.JPG" alt="Sistema"/>
+
 ### Pre-requisitos 📋
 
 1. El usuario final debera de tener instalado en su maquina el jre 14.0.1 o mayor.
