@@ -7,7 +7,7 @@ registrar libros y revistas, por tanto solo tiene la opcion de agregar al resgit
 
 A continuacion usted podra encontrar las clases que coexisten en el sistema:
 
-<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Book_20Store.JPG" alt="Diagrama de clases"/>
+<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Book_Store.JPG" alt="Diagrama de clases"/>
 
 Ademas, podra ver a continuacion las capturas de pantalla del sistema:
 
