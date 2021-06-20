@@ -11,7 +11,7 @@ A continuacion usted podra encontrar las clases que coexisten en el sistema:
 
 Ademas, podra ver a continuacion las capturas de pantalla del sistema:
 
-<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Sistema.JPG" alt="Diagrama de clases"/>
+<img src="https://github.com/Darkritt0101/Proyecto/blob/main/img/Sistema.JPG" alt="Sistema"/>
 
 para la imgen anterior:
 
@@ -24,7 +24,9 @@ Botonoes
 ***Guardar Registro (Guarda la informacion que usted ha ingresado al sistema, es importante mencionar:
     ***Si usted elige la opcion Book; los campos ISSN, Responsable, Tematica, Revista#, seran bloqueadas para su edicion.
     ***Si usted elige la opcion Magazine; los campos ISBN, Area, Autor seran bloqueadas para su edicion.
-
+***Abrir Reporte Consolidado (color azul): muestra en una ventana emergente los datos registrados tanto para Book y Magazine en conjunto.
+***Abrir Reporte Book (color azul): muestra en una ventana emergente los datos registrados unicamente para Book.
+***Abrir Reporte Magazine (color azul): muestra en una ventana emergente los datos registrados unicamente para Magazine.
 
 ### Pre-requisitos 📋
 
