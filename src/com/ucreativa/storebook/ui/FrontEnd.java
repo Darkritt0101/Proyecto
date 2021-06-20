@@ -14,6 +14,9 @@ import static com.ucreativa.storebook.repositories.Repository.*;
 
 public class FrontEnd extends JFrame {
 
+    /*
+     * Componentes del formulario
+     */
     private JPanel     mainPanel;
     private JLabel     lblTituloApp;
     private JTextField txtTitulo;
@@ -46,27 +49,37 @@ public class FrontEnd extends JFrame {
     private JButton    btnReporteConsolidado;
     private JTextField txtISSN;
     private JLabel     lblISSN;
-    private JLabel lvlTituloInventario;
+    private JLabel     lvlTituloInventario;
     private JLabel     lblCantidad;
     private JTextField txtCantidad;
     private JLabel     lblUbicacion;
     private JTextField txtUbicacion;
-    private JButton btnReporteBook;
-    private JButton btnReporteMagazine;
-    private JButton btnLimpiarTodo;
+    private JButton    btnReporteBook;
+    private JButton    btnReporteMagazine;
+    private JButton    btnLimpiarTodo;
 
+    /*
+     * Constructor del formualrio, se iniciaiza el atributo Titulo de este.
+     */
     public FrontEnd(String titulo) {
         super(titulo);
     }
 
+    /*
+     * Se contruye las parte intera del formulario:
+     */
     public void buildForm() {
-        this.buildScreen();
-        this.components();
-        this.setVisible(true);
+        this.buildScreen(); //construye la parte interna de la ventana
+        this.components(); //maneja los eventos de sus componentes de la ventana
+        this.setVisible(true); //se inicializa el metodo setvisible a tru del formulario para que se presente en pantalla
     }
 
+    /*
+     * Maneja los eventos de los componentes de la ventana
+     */
     private void components() {
 
+        //evento agregado al btn - Limpiar todo
         btnLimpiarTodo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,12 +87,11 @@ public class FrontEnd extends JFrame {
             }
         });
 
-
         //evento agregado al btn - Abrir Reporte Magazine
         btnReporteMagazine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File file = new File (FILE_PATH_MAGAZINE);
+                File file = new File(FILE_PATH_MAGAZINE);
                 Desktop desktops = Desktop.getDesktop();
                 if (file.exists()) {
                     try {
@@ -90,13 +102,12 @@ public class FrontEnd extends JFrame {
                 }
             }
         });
-
 
         //evento agregado al btn - Abrir Reporte Book
         btnReporteBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File file = new File (FILE_PATH_BOOK);
+                File file = new File(FILE_PATH_BOOK);
                 Desktop desktops = Desktop.getDesktop();
                 if (file.exists()) {
                     try {
@@ -108,29 +119,26 @@ public class FrontEnd extends JFrame {
             }
         });
 
-
         //evento agregado al btn - Abrir Reporte Consolidado
         btnReporteConsolidado.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                File file = new File (FILE_PATH_TODO);
+                File file = new File(FILE_PATH_TODO);
                 Desktop desktops = Desktop.getDesktop();
-                if (file.exists()){
+                if (file.exists()) {
                     try {
                         desktops.open(file);
                     } catch (IOException ioException) {
-                        JOptionPane.showMessageDialog(null,ioException.getMessage());
+                        JOptionPane.showMessageDialog(null, ioException.getMessage());
                     }
                 }
             }
         });
 
-
         //evento agregado al check de book
         chkBook.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                limpiarTodoTxtField();
                 chkMagazine.setSelected(false);
 
                 //txtfield documents
@@ -140,6 +148,8 @@ public class FrontEnd extends JFrame {
                 txtAnio.setEnabled(true);
                 txtPaginas.setEnabled(true);
                 txtTipo.setEnabled(true);
+                txtCantidad.setEnabled(true);
+                txtUbicacion.setEnabled(true);
 
                 //enable - txtfield Book
                 txtAutor.setEnabled(true);
@@ -166,7 +176,6 @@ public class FrontEnd extends JFrame {
         chkMagazine.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                limpiarTodoTxtField();
                 chkBook.setSelected(false);
 
                 //txtfield documents
@@ -176,6 +185,8 @@ public class FrontEnd extends JFrame {
                 txtAnio.setEnabled(true);
                 txtPaginas.setEnabled(true);
                 txtTipo.setEnabled(true);
+                txtCantidad.setEnabled(true);
+                txtUbicacion.setEnabled(true);
 
                 //enable - txtfield Magazine
                 txtNumeroRevista.setEnabled(true);
@@ -209,7 +220,7 @@ public class FrontEnd extends JFrame {
                             txtTematica.getText(), txtNumeroRevista.getText(), txtResponsable.getText(), txtISSN.getText(),
                             txtCantidad.getText(), txtUbicacion.getText(), chkBook.isSelected(), chkMagazine.isSelected());
                 } catch (Exception exception) {
-                    JOptionPane.showMessageDialog(null,exception.getMessage());
+                    JOptionPane.showMessageDialog(null, exception.getMessage());
                     //exception.printStackTrace();
                 }
 
@@ -217,6 +228,9 @@ public class FrontEnd extends JFrame {
         });
     }
 
+    /*
+     * MEtodo que vaias los coampos txtField, Checkbox de la ventana.
+     */
     private void limpiarTodoTxtField() {
         //txtfield documents
         txtTitulo.setText("");
@@ -243,13 +257,48 @@ public class FrontEnd extends JFrame {
         txtCantidad.setText("");
         txtUbicacion.setText("");
 
+        /*
+         * Desabilitar los siguiente campos y restaurar los colores
+         */
+            //txtfield documents
+            txtTitulo.setEnabled(false);
+            txtEditorial.setEnabled(false);
+            txtEdicion.setEnabled(false);
+            txtAnio.setEnabled(false);
+            txtPaginas.setEnabled(false);
+            txtTipo.setEnabled(false);
+            txtCantidad.setEnabled(false);
+            txtUbicacion.setEnabled(false);
+
+            //enable - txtfield Magazine
+            txtNumeroRevista.setEnabled(false);
+            txtNumeroRevista.setBackground(new Color(255, 255, 255));
+            txtResponsable.setEnabled(false);
+            txtResponsable.setBackground(new Color(255, 255, 255));
+            txtTematica.setEnabled(false);
+            txtTematica.setBackground(new Color(255, 255, 255));
+            txtISSN.setEnabled(false);
+            txtISSN.setBackground(new Color(255, 255, 255));
+
+            //not enable - txtfield Book
+            txtAutor.setEnabled(false);
+            txtAutor.setBackground(new Color(255, 255, 255));
+            txtArea.setEnabled(false);
+            txtArea.setBackground(new Color(255, 255, 255));
+            txtISBN.setEnabled(false);
+            txtISBN.setBackground(new Color(255, 255, 255));
+
     }
 
+    /*
+     * Construye la ventana
+     */
     private void buildScreen() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setContentPane(mainPanel);
-        this.setSize(540, 400);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //agrega el botond e cerrar en la prte derecha superior.
+        this.setContentPane(mainPanel); //agrega panel principal para agregar los componentes.
+        this.setSize(540, 400); //dimensiona al formualrio.
         this.setLocationRelativeTo(null); //centrar el formulario al centro de la pantalla
     }
+
 
 }
